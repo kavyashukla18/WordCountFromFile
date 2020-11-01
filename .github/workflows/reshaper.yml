@@ -17,6 +17,12 @@ jobs:
       - name: Install resharper
         run: dotnet tool install -g JetBrains.ReSharper.GlobalTools
         
+      - name: Add package
+        run: dotnet add Receiver.Test/Receiver.Test.csproj package xunit --version 2.4.1
+        
+      - name: Add package
+        run: dotnet add sender.Test/sender.Test.csproj package xunit --version 2.4.1
+        
       - name: Run resharper inspection
         run: jb inspectcode Review-case.sln /output=insreport.xml
 
