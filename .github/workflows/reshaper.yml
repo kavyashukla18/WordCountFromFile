@@ -27,9 +27,6 @@ jobs:
         
       - name: Add package
         run: dotnet add sender.Test/sender.Test.csproj package xunit --version 2.4.1
-        
-      - name: Run resharper inspection
-        run: jb inspectcode Review-case.sln /output=insreport.xml
 
       - name: Run resharper duplicate code check
         run: jb dupfinder Review-case.sln /output=dupreport.xml
